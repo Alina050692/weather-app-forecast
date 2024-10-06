@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>my-weather-app</title>
+  </head>
+  <body>
+    <div class="weather-app">
+    <header>
+      <form id="search-form">
+        <input
+          type="search"
+          placeholder="Enter a city.."
+          required
+          class="search-input"
+          id="search-input"
+        />
+        <input type="submit" value="Search" class="search-button" />
+      </form>
+    </header>
+     <main>
+        <div class="current-weather">
+          <div>
+            <h1 class="current-city" id="current-city">Paris</h1>
+            <p class="current-details">
+              <span id="current-date">Wednesday, 21:31</span>,
+              <span id="description">broken clouds</span>
+              <br />
+              Humidity: <strong id="humidity">86 %</strong>, Wind:
+              <strong id="wind-speed">32 km/h</strong>
+            </p>
+          </div>
+          <div class="weather-app-temperature-container">
+            <div id="icon"></div>
+             <div class="current-temperature" id="temperature"></div>
+            <div class="current-temperature-value" id="current-temperature"
+              >24</div> <div class="current-temperature-unit">°C</div>
+          </div>
+          </div>
+        </main>
+           <footer>
+        <p>
+          This project was coded by
+          <a href="https://github.com/Alina050692" target="_blank"
+            >Alina Sikorski</a
+          >
+          is
+          <a
+            href="https://github.com/Alina050692/weather-app-project"
+            target="_blank"
+          >
+            open-sourced on GitHub</a
+          >
+          and
+          <a
+            href="https://app.netlify.com/teams/alina050692/overview"
+            target="_blank"
+            >hosted on Netlify</a
+          >
+        </p>
+      </footer>
+    </div>
+    </div>
+  </body>
+    <script src="index.js"></script>
+</html>
