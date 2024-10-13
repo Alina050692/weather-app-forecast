@@ -53,19 +53,24 @@ function formatDate(date) {
   return `${formattedDay} ${hours}:${minutes}`;
 }
 
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", search);
+function getForecast(city) {
+  let apiKey = "b37967db0ea6a2t18o10f60a49513fb0";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+  console.log(apiUrl);
+}
 
-let currentDateELement = document.querySelector("#current-date");
-let currentDate = new Date();
+function displayForecast() {
+  let forecastElement = document.querySelector(`#forecast`);
 
-currentDateELement.innerHTML = formatDate(currentDate);
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHtml = "";
 
-let forecast = document.querySelector(`#forecast`);
-
-forecast.innterHTML = `
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
  <div class="weather-forecast-day">
-                <div class="weather-forecast-date">Sun</div>
+                <div class="weather-forecast-date">${day}</div>
                 <div class="weather-forecast-icon">🌤</div>
                 <div class="weather-forecast-temperatures">
                     <div class="weather-forecast-temperature">
@@ -75,3 +80,16 @@ forecast.innterHTML = `
             </div>
             </div>
 `;
+  });
+
+  forecastElement.innerHTML = forecastHtml;
+}
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", search);
+
+let currentDateELement = document.querySelector("#current-date");
+let currentDate = new Date();
+
+currentDateELement.innerHTML = formatDate(currentDate);
+displayForecast();
